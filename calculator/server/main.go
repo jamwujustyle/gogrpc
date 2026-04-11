@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/jamwujustyle/gogrpc/app/sum/proto"
+	pb "github.com/jamwujustyle/gogrpc/calculator/proto"
 	"google.golang.org/grpc"
 )
 

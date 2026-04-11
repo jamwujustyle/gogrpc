@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.1
 // - protoc             v7.34.1
-// source: sum/proto/sum.proto
+// source: calculator.proto
 
 package proto
 
@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CalculatorService_Sum_FullMethodName = "/sum.CalculatorService/Sum"
+	CalculatorService_Sum_FullMethodName = "/calculator.CalculatorService/Sum"
 )
 
 // CalculatorServiceClient is the client API for CalculatorService service.
@@ -108,7 +108,7 @@ func _CalculatorService_Sum_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CalculatorService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "sum.CalculatorService",
+	ServiceName: "calculator.CalculatorService",
 	HandlerType: (*CalculatorServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -117,5 +117,5 @@ var CalculatorService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "sum/proto/sum.proto",
+	Metadata: "calculator.proto",
 }

@@ -4,12 +4,12 @@ import (
 	"context"
 	"log"
 
-	pb "github.com/jamwujustyle/gogrpc/app/sum/proto"
+	pb "github.com/jamwujustyle/gogrpc/calculator/proto"
 )
 
 func doSum(c pb.CalculatorServiceClient) {
 	log.Printf("doSum was invoked")
-	res, err:= c.Sum(context.Background(), &pb.SumRequest{
+	res, err := c.Sum(context.Background(), &pb.SumRequest{
 		NumOne: 10,
 		NumTwo: 15,
 	})
