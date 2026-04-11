@@ -14,13 +14,13 @@ build:
 		--go_out=. --go_opt=paths=source_relative \
     	--go-grpc_out=. --go-grpc_opt=paths=source_relative \
 		$(PROTO_DIR)/*.proto
-	go build -o $(BIN_DIR)/server .$(SERVER_DIR)
-	go build -o $(BIN_DIR)/client .$(CLIENT_DIR)
+	go build -o $(BIN_DIR)/server ./$(SERVER_DIR)
+	go build -o $(BIN_DIR)/client ./$(CLIENT_DIR)
 
 server:
-	.${BIN_DIR}/server
+	./${BIN_DIR}/server
 client:
-	.${BIN_DIR}/client
+	./${BIN_DIR}/client
 
 cleanup:
 	rm -rf $(PROTO_DIR)/*.pb.go
