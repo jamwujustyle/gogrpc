@@ -12,7 +12,7 @@ message GreetResponse {
     string result = 1;
 }
 
-
 service GreetService {
     rpc Greet(GreetRequest) returns (GreetResponse);
+    rpc GreetManyTimes(GreetRequest) returns (stream GreetResponse);
 }
