@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/jamwujustyle/gogrpc/calculator/proto";
+
+message AverageRequest {
+    int32 number = 1;
+}
+message AverageResponse {
+    double result = 1;
+}

@@ -25,24 +25,29 @@ var File_calculator_proto protoreflect.FileDescriptor
 const file_calculator_proto_rawDesc = "" +
 	"\n" +
 	"\x10calculator.proto\x12\n" +
-	"calculator\x1a\tsum.proto\x1a\fprimes.proto2\x8c\x01\n" +
+	"calculator\x1a\tsum.proto\x1a\fprimes.proto\x1a\raverage.proto2\xd2\x01\n" +
 	"\x11CalculatorService\x126\n" +
 	"\x03Sum\x12\x16.calculator.SumRequest\x1a\x17.calculator.SumResponse\x12?\n" +
-	"\x06Primes\x12\x18.calculator.PrimeRequest\x1a\x19.calculator.PrimeResponse0\x01B1Z/github.com/jamwujustyle/gogrpc/calculator/protob\x06proto3"
+	"\x06Primes\x12\x18.calculator.PrimeRequest\x1a\x19.calculator.PrimeResponse0\x01\x12D\n" +
+	"\aAverage\x12\x1a.calculator.AverageRequest\x1a\x1b.calculator.AverageResponse(\x01B1Z/github.com/jamwujustyle/gogrpc/calculator/protob\x06proto3"
 
 var file_calculator_proto_goTypes = []any{
-	(*SumRequest)(nil),    // 0: calculator.SumRequest
-	(*PrimeRequest)(nil),  // 1: calculator.PrimeRequest
-	(*SumResponse)(nil),   // 2: calculator.SumResponse
-	(*PrimeResponse)(nil), // 3: calculator.PrimeResponse
+	(*SumRequest)(nil),      // 0: calculator.SumRequest
+	(*PrimeRequest)(nil),    // 1: calculator.PrimeRequest
+	(*AverageRequest)(nil),  // 2: calculator.AverageRequest
+	(*SumResponse)(nil),     // 3: calculator.SumResponse
+	(*PrimeResponse)(nil),   // 4: calculator.PrimeResponse
+	(*AverageResponse)(nil), // 5: calculator.AverageResponse
 }
 var file_calculator_proto_depIdxs = []int32{
 	0, // 0: calculator.CalculatorService.Sum:input_type -> calculator.SumRequest
 	1, // 1: calculator.CalculatorService.Primes:input_type -> calculator.PrimeRequest
-	2, // 2: calculator.CalculatorService.Sum:output_type -> calculator.SumResponse
-	3, // 3: calculator.CalculatorService.Primes:output_type -> calculator.PrimeResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	2, // 2: calculator.CalculatorService.Average:input_type -> calculator.AverageRequest
+	3, // 3: calculator.CalculatorService.Sum:output_type -> calculator.SumResponse
+	4, // 4: calculator.CalculatorService.Primes:output_type -> calculator.PrimeResponse
+	5, // 5: calculator.CalculatorService.Average:output_type -> calculator.AverageResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -55,6 +60,7 @@ func file_calculator_proto_init() {
 	}
 	file_sum_proto_init()
 	file_primes_proto_init()
+	file_average_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
