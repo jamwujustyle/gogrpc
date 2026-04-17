@@ -7,7 +7,6 @@
 package proto
 
 import (
-	calculator "github.com/jamwujustyle/gogrpc/calculator"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -32,10 +31,10 @@ const file_calculator_proto_rawDesc = "" +
 	"\x06Primes\x12\x18.calculator.PrimeRequest\x1a\x19.calculator.PrimeResponse0\x01B1Z/github.com/jamwujustyle/gogrpc/calculator/protob\x06proto3"
 
 var file_calculator_proto_goTypes = []any{
-	(*SumRequest)(nil),               // 0: calculator.SumRequest
-	(*calculator.PrimeRequest)(nil),  // 1: calculator.PrimeRequest
-	(*SumResponse)(nil),              // 2: calculator.SumResponse
-	(*calculator.PrimeResponse)(nil), // 3: calculator.PrimeResponse
+	(*SumRequest)(nil),    // 0: calculator.SumRequest
+	(*PrimeRequest)(nil),  // 1: calculator.PrimeRequest
+	(*SumResponse)(nil),   // 2: calculator.SumResponse
+	(*PrimeResponse)(nil), // 3: calculator.PrimeResponse
 }
 var file_calculator_proto_depIdxs = []int32{
 	0, // 0: calculator.CalculatorService.Sum:input_type -> calculator.SumRequest
@@ -55,6 +54,7 @@ func file_calculator_proto_init() {
 		return
 	}
 	file_sum_proto_init()
+	file_primes_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

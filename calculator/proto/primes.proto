@@ -3,7 +3,7 @@ syntax = "proto3";
 package calculator;
 
 
-option go_package = "github.com/jamwujustyle/gogrpc/calculator";
+option go_package = "github.com/jamwujustyle/gogrpc/calculator/proto";
 
 message PrimeRequest {
     int64 number = 1;
