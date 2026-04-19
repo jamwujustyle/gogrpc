@@ -20,17 +20,17 @@ func (s *Server) Max(stream pb.CalculatorService_MaxServer) error {
 			return nil
 		}
 		if err != nil {
-			log.Printf("err")
+			log.Printf("err: %v", err)
 		}
 
-		if req.Num > max {
+		if num := req.Num; num > max {
 			max = req.Num
+			err = stream.Send(&pb.MaxResponse{
+				Max: max,
+			})
 		}
 		fmt.Printf("received: %d\n", req.Num)
 
-		err = stream.Send(&pb.MaxResponse{
-			Max: max,
-		})
 		if err != nil {
 			log.Printf("error while sending: %v\n", err)
 		}
