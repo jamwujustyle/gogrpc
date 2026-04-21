@@ -6,6 +6,7 @@ import (
 	"net"
 
 	pb "github.com/jamwujustyle/gogrpc/calculator/proto"
+	"github.com/jamwujustyle/logger"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
@@ -17,6 +18,7 @@ type Server struct {
 }
 
 func main() {
+	logger.InitLogger()
 	lis, err := net.Listen("tcp", addr)
 	if err != nil {
 		log.Fatalf("failed to establish connection: %v\n", err)
