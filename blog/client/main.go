@@ -14,7 +14,7 @@ var addr string = "localhost:50053"
 func main() {
 	logger.InitLogger()
 
-	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.NewClient(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		slog.Error("error establishing connection", "err", err)
 	}
@@ -29,5 +29,7 @@ func main() {
 
 	readBlog(c, "hello world")
 	updateBlog(c, id)
+	listBlog(c)
+	deleteBlog(c, id)
 
 }

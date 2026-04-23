@@ -113,7 +113,7 @@ type BlogServiceServer interface {
 	ReadBlog(context.Context, *BlogId) (*Blog, error)
 	UpdateBlog(context.Context, *Blog) (*emptypb.Empty, error)
 	DeleteBlog(context.Context, *BlogId) (*emptypb.Empty, error)
-	ListBlogs(*emptypb.Empty01 grpc.ServerStreamingServer[Blog]) error
+	ListBlogs(*emptypb.Empty, grpc.ServerStreamingServer[Blog]) error
 	mustEmbedUnimplementedBlogServiceServer()
 }
 
