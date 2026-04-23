@@ -4,7 +4,6 @@ go 1.25.5
 
 require (
 	github.com/jamwujustyle/logger v0.0.0-20260420135018-7b17e74b2a4a
-	go.mongodb.org/mongo-driver v1.17.9
 	go.mongodb.org/mongo-driver/v2 v2.5.1
 	google.golang.org/grpc v1.80.0
 	google.golang.org/protobuf v1.36.11

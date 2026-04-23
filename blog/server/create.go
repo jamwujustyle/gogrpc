@@ -5,13 +5,13 @@ import (
 	"log/slog"
 
 	pb "github.com/jamwujustyle/gogrpc/blog/proto"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
 
 func (s *Server) CreateBlog(ctx context.Context, in *pb.Blog) (*pb.BlogId, error) {
-	slog.Info("CreateBlog invoked with:%v\n", "in", in)
+	slog.Info("CreateBlog invoked with:", "in", in)
 
 	data := BlogItem{
 		AuthorID: in.AuthorId,
@@ -28,7 +28,7 @@ func (s *Server) CreateBlog(ctx context.Context, in *pb.Blog) (*pb.BlogId, error
 		)
 	}
 
-	oid, ok := res.InsertedID.(primitive.ObjectID)
+	oid, ok := res.InsertedID.(bson.ObjectID)
 
 	if !ok {
 		return nil, status.Errorf(

@@ -16,7 +16,7 @@ import (
 )
 
 var collection *mongo.Collection
-var addr string = "0.0.0.0:50051"
+var addr string = "0.0.0.0:50053"
 
 type Server struct {
 	pb.UnimplementedBlogServiceServer
