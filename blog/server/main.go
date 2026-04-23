@@ -4,7 +4,6 @@ import (
 	"context"
 	"log/slog"
 	"net"
-	"os"
 	"time"
 
 	pb "github.com/jamwujustyle/gogrpc/blog/proto"
@@ -32,12 +31,10 @@ func main() {
 
 	if err != nil {
 		slog.Error("Failed to create mongo client", "err", err)
-		os.Exit(1)
 	}
 
 	if err := client.Ping(ctx, nil); err != nil {
 		slog.Error("Could not connect to mongo (Ping failed)", "err", err)
-		os.Exit(1)
 	}
 	defer func() {
 		if err := client.Disconnect(context.Background()); err != nil {
@@ -50,7 +47,6 @@ func main() {
 	lis, err := net.Listen("tcp", addr)
 	if err != nil {
 		slog.Error("Error establishing listener", "err", err)
-		os.Exit(1)
 	}
 	slog.Info("Listening on", "addr", addr)
 
@@ -59,7 +55,6 @@ func main() {
 
 	if err := s.Serve(lis); err != nil {
 		slog.Error("Failed to serve", "err", err)
-		os.Exit(1)
 	}
 
 }

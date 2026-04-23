@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"log/slog"
-	"os"
 
 	pb "github.com/jamwujustyle/gogrpc/blog/proto"
 )
@@ -17,7 +16,6 @@ func readBlog(c pb.BlogServiceClient, id string) *pb.Blog {
 
 	if err != nil {
 		slog.Error("Error happened while reading", "err", err)
-		os.Exit(1)
 	}
 
 	slog.Info("Blog was read", "res", res)
